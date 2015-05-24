@@ -128,18 +128,6 @@ public class CoinChangerTest {
 		assertEquals( expectedCoins , changer.makeChange(91));
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 	private List<Integer> makeArrayList(int[] cents){
 		int[] ints = cents;
 	    List<Integer> intList = new ArrayList<Integer>();

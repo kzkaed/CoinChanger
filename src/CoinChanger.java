@@ -7,25 +7,15 @@ public class CoinChanger {
 	private final int DIME = 10;
 	private final int QUARTER = 25;
 	
+	private int[] COINS = { QUARTER, DIME, NICKEL, PENNY };
+	
 	public ArrayList<Integer> makeChange(int cents) {
 		ArrayList<Integer> returnedCoins = new ArrayList<Integer>(cents);
-		while (cents >= QUARTER){
-			returnedCoins.add(QUARTER);
-			cents -= QUARTER;
-		}
-		
-		
-		while (cents >= DIME){
-			returnedCoins.add(DIME);
-			cents -= DIME;
-		}
-		
-		while(cents >= NICKEL){
-			returnedCoins.add(NICKEL);
-			cents -= NICKEL;
-		}
-		for (int i = 0; i < cents; i++){
-				returnedCoins.add(PENNY);
+		for (int coinIndex = 0; coinIndex < COINS.length; coinIndex++) {
+			while (cents >= COINS[coinIndex]){
+				returnedCoins.add(COINS[coinIndex]);
+				cents -= COINS[coinIndex];
+			}
 		}
 		return returnedCoins;
 	}
